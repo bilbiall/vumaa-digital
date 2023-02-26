@@ -2,9 +2,19 @@
 <html>
 
 <head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9BMCFSX4JT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9BMCFSX4JT');
+</script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Contact-Vumaa Digital</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="The Smart Marketing Hub. 
 Digital Marketing
 Product Photography
@@ -25,9 +35,21 @@ Graphic Design
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css">
     <link rel="stylesheet" href="assets/css/Pricing-Yearly--Monthly.css">
     <link rel="stylesheet" href="assets/css/Team.css">
+    <script>
+        window.onbeforeunload = () => {
+  for(const form of document.getElementsByTagName('form')) {
+    form.reset();
+  }
+}
+        function resetForm() {
+    for(const form of document.getElementsByTagName('form')) {
+      form.reset();
+    }
+  }
+    </script>
     <style>
         form {
-          width: 500px;
+          width: 100%;
           margin: 0 auto;
           text-align: center;
         }
@@ -62,6 +84,10 @@ Graphic Design
           border-radius: 5px;
           background-color: #f2f2f2;
           padding: 20px;
+          display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
         }
         form button {
             padding: 15px;
@@ -76,6 +102,9 @@ Graphic Design
             margin: 20px auto 0;
             border-radius: 30px;
         }
+        #thankYouMessage {
+			display: none; 
+		}
       </style>
 </head>
 
@@ -99,9 +128,9 @@ Graphic Design
     <main class="page contact-page">
         <section class="portfolio-block contact">
             <div class="container">
-                <div class="heading">
+                <!--<div class="heading">
                     <h2 style="border-top-color: var(--bs-blue);--bs-body-color: var(--bs-blue);color: var(--bs-blue);height: -48.125px;">CONTACT US</h2>
-                </div>
+                </div>-->
  <!--<form action="mailto:vumaadigital.info@gmail.com" method="post" enctype="text/plain">
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_subject" value="Contact Us!">
@@ -118,18 +147,35 @@ Graphic Design
     <textarea id="message" name="message" rows="5" cols="40"></textarea><br>
     <input type="submit" value="Send Message">
   </form>-->
-  <form onsubmit="sendEmail(); reset(); return false;">
-    <!--<label for="name">Name:</label><br>-->
-    <input type="text" id="name" name="name" placeholder="Your Name" required><br>
-    <!--<label for="email">Email:</label><br>-->
+  <!--<form onsubmit="sendEmail(); reset(); return false;">-->
+ <!-- <form action="https://formspree.io/f/mzbqrggk" method="post" enctype="text/plain">  
+    <label for="name">Name:</label><br>-->
+   <!-- <input type="text" id="name" name="name" placeholder="Your Name" required><br>
+    <label for="email">Email:</label><br>
     <input type="email" id="email" name="email" placeholder="Your Email" required><br>
-    <!--<label for="subject">Subject:</label><br>-->
+    <label for="subject">Subject:</label><br>-->
     <!--<input type="text" id="subject" name="subject"><br>-->
     <!--<label for="message">Message:</label><br>-->
-    <textarea id="message" name="message" placeholder="How can we help you"></textarea><br>
+    <!--<textarea id="message" name="message" placeholder="How can we help you"></textarea><br>
+    <!-<input type="submit" value="Send Message">-->
+    <!--<button type="submit">Send Message</button>
+</form>-->
+<div class="form-container">
+    <h2 style="color: dodgerblue;
+     text-align: center;">Contact Us</h2>
+<form id="form1" name="contact form" accept-charset="utf-8" action="https://formspree.io/f/mzbqrggk" method="post"> <!--onsubmit="resetForm(); return false;">-->
+    <!--<fieldset id="inputs">-->
+      <label for="full-name">Name</label>
+      <input type="text" name="name" id="fullname" placeholder="Your Name" required>
+      <label for="email-address">Email Address</label>
+      <input type="email" name="_replyto" id="email-address" placeholder="email@domain.com" required>
+      <!--<label for="message">Message</label>-->
+      <textarea rows="5" name="message" id="message" placeholder="Write a brief message here" required></textarea>
+      <input type="hidden" name="subject" id="subject" value="Contact Form Submission">
+    <!--</fieldset>-->
     <!--<input type="submit" value="Send Message">-->
-    <button type="submit">Send Message</button>
-</form>
+    <button type="submit" value="Send Message">Send Message</button>
+  </form>
 
             </div>
         </section>
